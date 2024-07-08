@@ -17,48 +17,125 @@
             <div></div>
         </div>
         <nav id="navMenu">
-            <a href="#">Home</a>
+            <a href="/">Home</a>
             <a href="/trades">Trades</a>
             <a href="/dba">DBA</a>
-            <a href="#footer">About Us</a>
+            <a href="/#footer">About Us</a>
             <!-- <a href="/login">Login</a> -->
         </nav>
     </header>
 
     <main>
-        <div class="countries">
-            
-            <ul class="details">
-                <li class="country">
-                    <div class="img"><img src="assets/flag.png" alt="flag"></div>
-                    <p class="name">India</p>
-                </li>
+        <h2 class="table-heading">Product and Country Details</h2>
+        <table class="container">
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i=0; i < secondTableMsg.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= secondTableMsg[i].country_name %>
+                        </td>
+                        <td>
+                            <%= secondTableMsg[i].product_name %>
+                        </td>
+                        <td>
+                            <%= secondTableMsg[i].category %>
+                        </td>
+                        <td>
+                            <%= secondTableMsg[i].role %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
 
-                <li class="country">
-                    <div class="img"><img src="assets/flag.png" alt="flag"></div>
-                    <p class="name">India</p>
-                </li>
-                <li class="country">
-                    <div class="img"><img src="assets/flag.png" alt="flag"></div>
-                    <p class="name">India</p>
-                </li>
-                <li class="country">
-                    <div class="img"><img src="assets/flag.png" alt="flag"></div>
-                    <p class="name">India</p>
-                </li>
-                <li class="country">
-                    <div class="img"><img src="assets/flag.png" alt="flag"></div>
-                    <p class="name">India</p>
-                </li>
-                <li class="country">
-                    <div class="img"><img src="assets/flag.png" alt="flag"></div>
-                    <p class="name">India</p>
-                </li>
-            </ul>
-        </div>
+        <h2 class="table-heading">Import Details</h2>
+        <table class="container">
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Cost</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i=0; i < firstTableMsg.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= firstTableMsg[i].country_name %>
+                        </td>
+                        <td>
+                            <%= firstTableMsg[i].product_name %>
+                        </td>
+                        <td>
+                            <%= firstTableMsg[i].category %>
+                        </td>
+                        <td>
+                            <%= firstTableMsg[i].quantity ? `${firstTableMsg[i].quantity.toLocaleString()} units` : ''
+                                %>
+                        </td>
+                        <td>
+                            <%= firstTableMsg[i].cost ? `$${firstTableMsg[i].cost.toLocaleString()}` : '' %>
+                        </td>
+                        <td>
+                            <%= firstTableMsg[i].role %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
 
+        <h2 class="table-heading">Export Details</h2>
+        <table class="container">
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Cost</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i=0; i < thirdTableMsg.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= thirdTableMsg[i].country_name %>
+                        </td>
+                        <td>
+                            <%= thirdTableMsg[i].product_name %>
+                        </td>
+                        <td>
+                            <%= thirdTableMsg[i].category %>
+                        </td>
+                        <td>
+                            <%= thirdTableMsg[i].quantity ? `${thirdTableMsg[i].quantity.toLocaleString()} units` : ''
+                                %>
+                        </td>
+                        <td>
+                            <%= thirdTableMsg[i].cost ? `$${thirdTableMsg[i].cost.toLocaleString()}` : '' %>
+                        </td>
+                        <td>
+                            <%= thirdTableMsg[i].role %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+
+        
     </main>
-
 </body>
 
 </html>

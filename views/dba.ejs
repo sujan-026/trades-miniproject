@@ -9,17 +9,43 @@
 </head>
 
 <body>
+    <!-- Header -->
+    <header>
+        <span>Global Trades Platform</span>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="navMenu">
+            <a href="/index">Home</a>
+            <a href="/trades">Trades</a>
+            <a href="/dba">DBA</a>
+            <a href="/#footer">About Us</a>
+        </nav>
+    </header>
+
     <div class="container">
         <h1>Global Trade Management Dashboard </h1>
         <!-- Form to add a new country -->
         <div class="form-container">
             <h2>Add Country</h2>
-            <form id="addCountryForm" method="POST">
+            <form id="addCountryForm" action="/add-country" method="POST">
                 <input type="text" id="countryName" placeholder="Country Name" name="countryName" required>
                 <input type="text" id="countryIsocode" placeholder="Country Iso Code" name="isoCode" required>
                 <button type="submit">Add Country</button>
             </form>
         </div>
+        
+        <!-- Form to delete a country -->
+        <div class="form-container">
+            <h2>Delete Country</h2>
+            <form id="deleteCountryForm" action="/delete-country" method="POST">
+                <input type="text" id="countryId" placeholder="Country ID" name="countryId" required>
+                <button type="submit">Delete Country</button>
+            </form>
+        </div>
+        
         <!-- Table to display list of countries -->
         <div class="table-container">
             <h2>Country List</h2>
@@ -41,20 +67,23 @@
         <!-- Form to add a new product -->
         <div class="form-container">
             <h2>Add Product</h2>
-            <form id="addProductForm">
-                <!-- <div class="chkboxProduct">
-
-                    <input type="radio" name="trade" id="importId" vale="import">Import
-
-                    <input type="radio" name="trade" id="exportId" value="export">Export
-                </div> -->
+            <form id="addProductForm" action="/add-product" method="POST">
                 <input type="text" id="productName" placeholder="Product Name" name="productName" required>
-                <!-- <input type="text" id="productType" placeholder="Category" name="productCategory" required>
-                <input type="text" id="countryId" placeholder="Country Id" name="productCountryId" required> -->
+                <input type="text" id="productCategory" placeholder="Product Category" name="productCategory" required>
+                <input type="text" id="countryId" placeholder="Country ID" name="countryId" required>
                 <button type="submit">Add Product</button>
             </form>
         </div>
 
+        <!-- Form to delete a product -->
+        <div class="form-container">
+            <h2>Delete Product</h2>
+            <form id="deleteProductForm" action="/delete-product" method="POST">
+                <input type="text" id="productId" placeholder="Product ID" name="productId" required>
+                <button type="submit">Delete Product</button>
+            </form>
+        </div>
+        
         <!-- Table to display list of products -->
         <div class="table-container">
             <h2>Product List</h2>
@@ -72,59 +101,7 @@
                 </tbody>
             </table>
         </div>
-
-        <!-- Form to add import and export amounts -->
-        <div class="form-container">
-            <h2>Add Import/Export Amount</h2>
-            <form id="addAmountForm">
-                <input type="text" id="amountCountry" placeholder="Country Name" required>
-                <input type="text" id="importAmount" placeholder="Import Amount" required>
-                <input type="text" id="exportAmount" placeholder="Export Amount" required>
-                <button type="submit">Add Amount</button>
-            </form>
-        </div>
-        <div class="separator"></div>
-
-        <div class="heading">Update Details</div>
-        <!-- Form to update country -->
-        <div class="form-container">
-            <h2>Update Country</h2>
-            <form id="addCountryForm">
-                <input type="text" id="ExistcountryName" placeholder="Exsisting Country Name" required>
-                <input type="text" id="countryName" placeholder="New Country Name" required>
-                <input type="text" id="Newiscocode" placeholder="New Iso Code" required>
-                <input type="url" id="countryFlag" placeholder="Country Flag URL" required>
-                <button type="submit">Add Country</button>
-            </form>
-        </div>
-
-        <!-- Update a new product -->
-        <div class="form-container">
-            <h2>Update Product of country</h2>
-            <form id="addProductForm">
-                <div class="chkboxProduct">
-
-                    <input type="radio" name="trade" id="importId">Import
-                    <input type="radio" name="trade" id="exportId">Export
-                </div>
-                <input type="text" id="countryName" placeholder="Country Name" required>
-                <input type="text" id="productName" placeholder="Product Name" required>
-                <button type="submit">Add Product</button>
-            </form>
-        </div>
-
-        <!-- Update import and export amounts -->
-        <div class="form-container">
-            <h2>Update Import/Export Amount</h2>
-            <form id="addAmountForm">
-                <input type="text" id="amountCountry" placeholder="Country Name" required>
-                <input type="text" id="importAmount" placeholder="Import Amount" required>
-                <input type="text" id="exportAmount" placeholder="Export Amount" required>
-                <button type="submit">Add Amount</button>
-            </form>
-        </div>
     </div>
-    <script src="script.js"></script>
 </body>
 
 </html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/styles/login.css">
-    <title>Login</title>
+    <title>Register</title>
 </head>
 <body>
     <section>
@@ -13,8 +13,8 @@
             <a href="#" class="logo">Global Trade</a>
             <div class="form-container">
                 <div class="form-content">
-                    <h1 class="form-title">Sign in to your account</h1>
-                    <form class="form" action="/login" method="POST">
+                    <h1 class="form-title">Create an account</h1>
+                    <form class="form" action="/register" method="POST">
                         <div class="form-group">
                             <label for="email" class="form-label">Your email</label>
                             <input type="email" name="email" id="email" class="form-input" placeholder="name@gmail.com" required>
@@ -23,8 +23,8 @@
                             <label for="password" class="form-label">Password</label>
                             <input type="password" name="password" id="password" class="form-input" placeholder="••••••••" required>
                         </div>
-                        <button type="submit" class="form-button">Sign in</button>
-                        <p class="signup-text">Don’t have an account yet? <a href="/register" class="signup-link">Sign up</a></p>
+                        <button type="submit" class="form-button">Sign up</button>
+                        <p class="signup-text">Already have an account? <a href="/login" class="signup-link">Sign in</a></p>
                     </form>
                 </div>
             </div>

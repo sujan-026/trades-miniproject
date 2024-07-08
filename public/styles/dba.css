@@ -3,6 +3,95 @@ html {
   /* color: white; */
 }
 
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  height: 50px;
+  overflow: hidden;
+}
+
+header span {
+  font-weight: semibold;
+  font-size: 24px;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+a:hover {
+  color: #6c63ff;
+  transition: 0.3s;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+  nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 100vh;
+      background-color: black;
+      color: white;
+      padding-top: 60px;
+      transition: transform 0.3s ease;
+      z-index: 1;
+  }
+
+  nav a {
+      margin: 10px 0;
+      text-align: left;
+      padding: 10px 20px;
+  }
+
+  .hamburger {
+      display: flex;
+  }
+
+  nav.active {
+      display: flex;
+      transform: translateX(0);
+  }
+
+  .hamburger.active {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+  }
+}
+
 .container {
   width: 70%;
   margin: auto;

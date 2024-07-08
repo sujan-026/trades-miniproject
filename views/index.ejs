@@ -20,7 +20,8 @@
         <nav id="navMenu">
             <a href="#">Home</a>
             <a href="/trades">Trades</a>
-            <a href="/dba">DBA</a>
+            <a href="<%= session.userId ? '/dba' : '/login' %>">DBA</a>
+             <!-- <a href="/dba">DBA</a> -->
             <a href="#footer">About Us</a>
             <!-- <a href="/login">Login</a> -->
         </nav>
@@ -45,62 +46,26 @@
             </div>
         </div>
 
-        <!--Tables imported from mysql-->
-        <h2 class="table-heading">Top Trading Countries</h2>
-        <table class="container">
-            <thead>
-                <tr>
-                    <th>Country</th>
-                    <th>Product</th>
-                    <th>Category</th>
-                    <th>Value</th>
-                    <th>Quantity</th>
-                    <th>Role</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% for (let i=0; i < productMsg.length; i++) { %>
-                    <tr>
-                        <td>
-                            <%= productMsg[i].country_name %>
-                        </td>
-                        <td>
-                            <%= productMsg[i].product_name %>
-                        </td>
-                        <td>
-                            <%= productMsg[i].category %>
-                        </td>
-                        <td>
-                            <%= productMsg[i].value ? `$${productMsg[i].value.toLocaleString()}` : '' %>
-                        </td>
-                        <td>
-                            <%= productMsg[i].quantity ? `${productMsg[i].quantity.toLocaleString()} units` : '' %>
-                        </td>
-                        <td>
-                            <%= productMsg[i].role %>
-                        </td>
-                    </tr>
-                    <% } %>
-            </tbody>
-        </table>
-
         <!--Categories-->
         <div class="category-container">
             <h2 class="category-heading">Trade By Categories</h2>
             <div class="categories">
                 <% let uniqueCategories=[]; %>
-                    <% for (let i=0; i < productMsg.length; i++) { %>
-                        <% if (!uniqueCategories.includes(productMsg[i].category)) { %>
-                            <% uniqueCategories.push(productMsg[i].category); %>
-                                <div class="category">
-                                    <div class="product">
-                                        <h4>
-                                            <%= productMsg[i].category %>
-                                        </h4>
-                                    </div>
-                                </div>
+                    <% for (let i=0; i < categoryMsg.length; i++) { %>
+                        <% if (!uniqueCategories.includes(categoryMsg[i].category)) { %>
+                            <% uniqueCategories.push(categoryMsg[i].category); %>
                                 <% } %>
                                     <% } %>
+
+                                        <% uniqueCategories.forEach((category, index)=> { %>
+                                            <div class="category">
+                                                <div class="product">
+                                                    <h4>
+                                                        <%= category %>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                            <% }); %>
             </div>
         </div>
 
@@ -114,7 +79,7 @@
         <p>Our goal is to create a comprehensive trades platform as a part of our coursework.</p>
         <p>We are passionate about software development and aim to apply our knowledge to solve real-world problems.</p>
         <p>Thank you for visiting our website. We hope you find it useful and informative.</p>
-        <p>Created by Sujan P and Thejas.</p>
+        <p>Created by Sujan P and Thejas R.</p>
     </footer>
 
 
@@ -126,6 +91,13 @@
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
         }
+
+        const requireAuth = (req, res, next) => {
+            if (!req.session.userId || req.session.userRole !== 'dba') {
+                return res.redirect('/login');
+            }
+            next();
+        };
     </script>
 </body>
 

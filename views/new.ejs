@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/styles/dba.css">
+    <title>DBA Dashboard</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <a href="#" class="logo">Global Trade - DBA Dashboard</a>
+            <div class="form-container">
+                <div class="form-content">
+                    <h1 class="form-title">DBA Operations</h1>
+                    <form class="form" action="/dba" method="POST">
+                        <div class="form-group">
+                            <label for="countryName" class="form-label">Country Name</label>
+                            <input type="text" name="countryName" id="countryName" class="form-input" placeholder="Country Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="isoCode" class="form-label">ISO Code</label>
+                            <input type="text" name="isoCode" id="isoCode" class="form-input" placeholder="ISO Code">
+                        </div>
+                        <div class="form-group">
+                            <label for="productName" class="form-label">Product Name</label>
+                            <input type="text" name="productName" id="productName" class="form-input" placeholder="Product Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="productCategory" class="form-label">Product Category</label>
+                            <input type="text" name="productCategory" id="productCategory" class="form-input" placeholder="Product Category">
+                        </div>
+                        <div class="form-group">
+                            <label for="countryId" class="form-label">Country ID</label>
+                            <input type="text" name="countryId" id="countryId" class="form-input" placeholder="Country ID">
+                        </div>
+                        <button type="submit" class="form-button">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
