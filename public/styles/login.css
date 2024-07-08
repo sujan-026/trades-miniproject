@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc;
+    /* bg-gray-50 */
+    color: #1a202c;
+    /* dark:text-gray-900 */
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 25vh;
+    padding: 20px;
+    background-color: #fff;
+    /* white background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* shadow */
+    border-radius: 8px;
+    /* rounded corners */
+}
+
+.logo {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #1a202c;
+    /* dark text color */
+    text-decoration: none;
+}
+
+.form-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #1a202c;
+    /* dark text color */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #4a5568;
+    /* text-gray-700 */
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cbd5e0;
+    /* border-gray-300 */
+    border-radius: 4px;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.form-checkbox {
+    margin-right: 5px;
+}
+
+.form-checkbox-label {
+    color: #4a5568;
+    /* text-gray-700 */
+}
+
+.forgot-password {
+    color: #3182ce;
+    /* text-blue-600 */
+    text-decoration: none;
+}
+
+.form-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3182ce;
+    /* bg-blue-600 */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-button:hover {
+    background-color: #2b6cb0;
+    /* bg-blue-700 */
+}
+
+.signup-text {
+    text-align: center;
+    color: #4a5568;
+    /* text-gray-700 */
+}
+
+.signup-link {
+    color: #3182ce;
+    /* text-blue-600 */
+    text-decoration: none;
+}

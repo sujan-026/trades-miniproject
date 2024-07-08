@@ -1,0 +1,188 @@
+html {
+  background: linear-gradient(to bottom, rgb(14, 14, 14), rgb(30 30 89));
+  /* color: white; */
+}
+
+.container {
+  width: 70%;
+  margin: auto;
+  background-color: #4543aa2f;
+  padding: 20px;
+}
+
+.container h1{
+  padding-left: 120px;
+  font-weight: bold;
+  font-size: 2.3rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.separator {
+  background-color: white;
+  height: 5px;
+  width: 100%;
+}
+
+.heading {
+  margin-top: 15px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+thead {
+  border: black;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container h2 {
+  font-size: 20px;
+}
+
+#addCountryForm {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;  */
+}
+
+#countryTable {
+  width: 100%;
+  /* border:  solid;  */
+}
+
+/* th{
+    border:solid;
+  } */
+
+#countryTableBody,
+#productTableBody,
+#countryTable,
+#productTable {
+  background-color: rgb(73, 33, 33);
+  width: 100%;
+  border: white;
+  padding: 10px;
+}
+
+.chkboxProduct {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+
+
+}
+
+form {
+  /* background-color: #fefefe; */
+  /* margin: 5% auto; */
+  /* border: none; */
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container input[type=text],
+.form-container input[type=url] {
+  width: 70%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  display: inline-block;
+  /* border: 1px solid #ccc; */
+  box-sizing: border-box;
+}
+
+.form-container button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  width: 235px;
+}
+
+.form-container button:hover {
+  opacity: 0.8;
+}
+
+table {
+  background-color: rgb(73, 33, 33);
+  border-collapse: collapse;
+  /* Collapse border spacing */
+  width: 100%;
+  /* Full width */
+  margin-bottom: 20px;
+  /* Optional: Adds space below the table */
+}
+
+th,
+td,
+thead {
+
+  border: 1px solid;
+  /* Border for each cell */
+  padding: 8px;
+  /* Padding inside each cell */
+  text-align: left;
+  /* Align text to the left */
+}
+
+th {
+  background-color: rgb(73, 33, 33);
+  /* Background color for header cells */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table,
+th,
+td {
+  border: 1px solid #dddddd;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}

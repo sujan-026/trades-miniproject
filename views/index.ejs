@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Trades Platform</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <span>Global Trades Platform</span>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="navMenu">
+            <a href="#">Home</a>
+            <a href="/trades">Trades</a>
+            <a href="/dba">DBA</a>
+            <a href="#footer">About Us</a>
+            <!-- <a href="/login">Login</a> -->
+        </nav>
+    </header>
+
+    <!-- Main body of the website -->
+    <main>
+        <div class="landing-page">
+            <div class="content">
+                <div class="container">
+                    <div class="info">
+                        <h1>Trading Analytics</h1>
+                        <p>Explore the World's Trade Routes. Import & Export Insights at Your Fingertips!</p>
+                        <button>Get Started </button>
+                    </div>
+                    <div class="image">
+                        <img class="main-image"
+                            src="https://cdni.iconscout.com/illustration/premium/thumb/businessman-working-using-vr-tech-3840669-3202986.png?f=webp"
+                            alt="Businessman working using VR tech">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Tables imported from mysql-->
+        <h2 class="table-heading">Top Trading Countries</h2>
+        <table class="container">
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Value</th>
+                    <th>Quantity</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i=0; i < productMsg.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= productMsg[i].country_name %>
+                        </td>
+                        <td>
+                            <%= productMsg[i].product_name %>
+                        </td>
+                        <td>
+                            <%= productMsg[i].category %>
+                        </td>
+                        <td>
+                            <%= productMsg[i].value ? `$${productMsg[i].value.toLocaleString()}` : '' %>
+                        </td>
+                        <td>
+                            <%= productMsg[i].quantity ? `${productMsg[i].quantity.toLocaleString()} units` : '' %>
+                        </td>
+                        <td>
+                            <%= productMsg[i].role %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+
+        <!--Categories-->
+        <div class="category-container">
+            <h2 class="category-heading">Trade By Categories</h2>
+            <div class="categories">
+                <% let uniqueCategories=[]; %>
+                    <% for (let i=0; i < productMsg.length; i++) { %>
+                        <% if (!uniqueCategories.includes(productMsg[i].category)) { %>
+                            <% uniqueCategories.push(productMsg[i].category); %>
+                                <div class="category">
+                                    <div class="product">
+                                        <h4>
+                                            <%= productMsg[i].category %>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <% } %>
+                                    <% } %>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <h2>About Us</h2>
+        <p>We are 2nd-year CSE students from Dr. Ambedkar Institute of Technology (Dr. AIT).</p>
+        <p>This website is a part of our DBMS project.</p>
+        <p>Our goal is to create a comprehensive trades platform as a part of our coursework.</p>
+        <p>We are passionate about software development and aim to apply our knowledge to solve real-world problems.</p>
+        <p>Thank you for visiting our website. We hope you find it useful and informative.</p>
+        <p>Created by Sujan P and Thejas.</p>
+    </footer>
+
+
+
+    <script>
+        function toggleMenu() {
+            var navMenu = document.getElementById('navMenu');
+            var hamburger = document.getElementById('hamburger');
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
